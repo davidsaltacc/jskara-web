@@ -421,32 +421,32 @@ body {
     background-repeat: no-repeat;
 }
 
-.file-new { background-image: url("/assets/new.png"); }
-.file-open { background-image: url("/assets/open.png"); }
-.file-save { background-image: url("/assets/save.png"); }
+.file-new { background-image: url("assets/new.png"); }
+.file-open { background-image: url("assets/open.png"); }
+.file-save { background-image: url("assets/save.png"); }
 
-.kara-move { background-image: url("/assets/move.png"); }
-.kara-turn-left { background-image: url("/assets/turn-left.png"); }
-.kara-turn-right { background-image: url("/assets/turn-right.png"); }
-.kara-place-leaf { background-image: url("/assets/place-leaf.png"); }
-.kara-remove-leaf { background-image: url("/assets/remove-leaf.png"); }
+.kara-move { background-image: url("assets/move.png"); }
+.kara-turn-left { background-image: url("assets/turn-left.png"); }
+.kara-turn-right { background-image: url("assets/turn-right.png"); }
+.kara-place-leaf { background-image: url("assets/place-leaf.png"); }
+.kara-remove-leaf { background-image: url("assets/remove-leaf.png"); }
 
-.zoom-inc { background-image: url("/assets/zoom-in.png"); }
-.zoom-dec { background-image: url("/assets/zoom-out.png"); }
+.zoom-inc { background-image: url("assets/zoom-in.png"); }
+.zoom-dec { background-image: url("assets/zoom-out.png"); }
 
-.grid-size { background-image: url("/assets/resize.png"); }
+.grid-size { background-image: url("assets/resize.png"); }
 
-.kara-select { background-image: url("/assets/kara.png"); }
-.tree-select { background-image: url("/assets/tree-stump.png"); }
-.mushroom-select { background-image: url("/assets/mushroom.png"); }
-.clover-select { background-image: url("/assets/clover.png"); }
-.trash-select { background-image: url("/assets/trash.png"); }
+.kara-select { background-image: url("assets/kara.png"); }
+.tree-select { background-image: url("assets/tree-stump.png"); }
+.mushroom-select { background-image: url("assets/mushroom.png"); }
+.clover-select { background-image: url("assets/clover.png"); }
+.trash-select { background-image: url("assets/trash.png"); }
 
-.view-visible { background-image: url("/assets/view-visible.png"); }
-.view-all { background-image: url("/assets/view-all.png"); }
+.view-visible { background-image: url("assets/view-visible.png"); }
+.view-all { background-image: url("assets/view-all.png"); }
 
-.run { background-image: url("/assets/run.png"); }
-.stop { background-image: url("/assets/stop.png"); }
+.run { background-image: url("assets/run.png"); }
+.stop { background-image: url("assets/stop.png"); }
 
 .world-object {
     background-position: center;
@@ -465,10 +465,10 @@ body {
 
 .object-invisible { opacity: 35%; }
 
-.world-object.kara { background-image: url("/assets/kara.png"); }
-.world-object.tree { background-image: url("/assets/tree-stump.png"); }
-.world-object.mushroom { background-image: url("/assets/mushroom.png"); }
-.world-object.clover { background-image: url("/assets/clover.png"); z-index: 1; background-size: calc(100% - 8px); }
+.world-object.kara { background-image: url("assets/kara.png"); }
+.world-object.tree { background-image: url("assets/tree-stump.png"); }
+.world-object.mushroom { background-image: url("assets/mushroom.png"); }
+.world-object.clover { background-image: url("assets/clover.png"); z-index: 1; background-size: calc(100% - 8px); }
 
 .kara-select, .tree-select, .mushroom-select, .clover-select, .trash-select
 .world-object.kara, .world-object.tree, .world-object.mushroom, .world-object.clover {
