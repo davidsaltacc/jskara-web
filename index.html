@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JSKaraWeb</title>
+    <link rel="stylesheet" href="styles.css" />
+    <link rel="icon" href="/assets/kara.png" />
+    <script src="https://unpkg.com/monaco-editor@latest/min/vs/loader.js"></script>
+</head>
+<body>
+    <div class="tab-switch-bar" id="tab-switch-bar">
+        <button class="tab-switch" id="tab-switch" onclick="switchTabs();">Programmieren</button>
+    </div>
+    <div class="section-left" id="left">
+        <div id="editor"></div>
+    </div>
+    <div class="section-right" id="right">
+        <div class="top-bar side-bar">
+            <div class="save-bar">
+                <button class="file-new icon"></button><button class="file-open icon"></button><button class="file-save icon"></button>
+            </div>
+            <div class="other-bar">
+                <button class="settings">S</button><button class="information">I</button>
+            </div>
+        </div>
+        <div class="world-content">
+            <div class="left-bar side-bar">
+                <div class="kara-bar">
+                    <p class="kara-label">Kara</p>
+                    <button class="icon kara-move" onclick="karaMove();"></button>
+                    <button class="icon kara-turn-left" onclick="karaTurnLeft();"></button>
+                    <button class="icon kara-turn-right" onclick="karaTurnRight();"></button>
+                    <button class="icon kara-place-leaf" onclick="karaPutLeaf();"></button>
+                    <button class="icon kara-remove-leaf" onclick="karaRemoveLeaf();"></button>
+                </div>
+                <div class="world-settings-bar">
+                    <p class="zoom-label">Zoom</p>
+                    <button class="icon zoom-inc" onclick="increaseZoom();"></button>
+                    <button class="icon zoom-dec" onclick="decreaseZoom();"></button>
+                    <p class="size-label">Größe</p>
+                    <button class="icon grid-size" onclick="toggleGridSizeMenu();"></button>
+                </div>
+            </div>
+
+            <div class="grid-container" id="world-grid"></div>
+
+            <div class="right-bar side-bar">
+                <div class="world-bar">
+                    <p class="world-label">Welt</p>
+                    <div class="icon kara-select orientation-1" draggable="true" ondragover="dragOver(event);" ondragstart="startDrag(event, 'new', { 'object': 'kara' });"></div>
+                    <div class="icon tree-select" draggable="true" ondragover="dragOver(event);" ondragstart="startDrag(event, 'new', { 'object': 'tree' });"></div>
+                    <div class="icon mushroom-select" draggable="true" ondragover="dragOver(event);" ondragstart="startDrag(event, 'new', { 'object': 'mushroom' });"></div>
+                    <div class="icon clover-select" draggable="true" ondragover="dragOver(event);" ondragstart="startDrag(event, 'new', { 'object': 'clover' });"></div>
+                    <div class="icon trash-select" ondragover="dragOver(event);" ondrop="deleteObject(event);"></div>
+                </div>
+                <div class="view-bar">
+                    <p class="view-label">Sicht</p>
+                    <button class="icon view-visible" onclick="setVisibility('visible');"></button>
+                    <button class="icon view-all" onclick="setVisibility('all');"></button>
+                </div>
+            </div>
+        </div>
+        <div class="bottom-bar side-bar">
+            <div class="speed-bar">
+                <p class="speed-slider-label">Geschwindigkeit</p>
+                <input class="speed-slider" type="range" min="0.02" max="5" step="0.01" value="2.924" onchange="changeSpeed(Math.pow(this.value, 3) / 25);">
+            </div>
+            <div class="run-bar">
+                <button class="icon run" onclick="runProgram();"></button></button><button class="icon stop" onclick="stopProgram();"></button>
+            </div>
+        </div>
+    </div>
+
+    <div class="overlay" id="gridsize-overlay" style="display: none;">
+        <div class="gridsize-menu">
+            <p>Breite: <input type="number" value="9" id="grid-width" onchange="setGridSizeX(this.value);"></p>
+            <p>Höhe: <input type="number" value="9" id="grid-height" onchange="setGridSizeY(this.value);"></p>
+            <button onclick="toggleGridSizeMenu();">Ok</button>
+        </div>
+    </div>
+
+    <script src="main.js" type="module"></script>
+</body>
+</html>
